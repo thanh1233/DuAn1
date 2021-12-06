@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/background_edttextdox"
+            android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/chuaduyet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="16dp"
+                    android:drawableLeft="@android:drawable/ic_delete"
+                    android:text=" Đang chờ duyệt vé"
+                    android:textColor="#F44336"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sovene" />
+
+                <TextView
+                    android:id="@+id/adminduyet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:drawableLeft="@drawable/ic_baseline_verified_24"
+                    android:text=" Duyệt "
+                    android:textColor="#009688"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tenhoadown" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/daduyet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="16dp"
+                    android:drawableLeft="@drawable/ic_baseline_verified_24"
+                    android:text=" Duyệt vé thành công"
+                    android:textColor="#009688"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sovene" />
+
+                <TextView
+                    android:id="@+id/tenhoadown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="70dp"
+                    android:text="Nhà xe Phương trang thất bồng lai"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/chuyen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Tuyến: Dak Lak - Lâm Đồng"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tenhoadown" />
+
+                <TextView
+                    android:id="@+id/sovene"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Số lượng vé: 100 vé"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chuyen" />
+
+                <TextView
+                    android:id="@+id/diachi2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Ngày thanh toán: 02-12-2021"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sovene"
+                    app:layout_constraintTop_toBottomOf="@+id/chuyen" />
+
+                <TextView
+                    android:id="@+id/diachi3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#FF0000"
+                    android:textSize="15dp"
+                    android:text="Tổng tiền: 15.000.00 VND"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sovene" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</LinearLayout>

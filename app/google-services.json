@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "274056523594",
+    "firebase_url": "https://apvexe-6847e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "apvexe-6847e",
+    "storage_bucket": "apvexe-6847e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274056523594:android:81ed8cafd717d37db51bb3",
+        "android_client_info": {
+          "package_name": "com.example.apvexe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274056523594-7o8fefc8d4rq3ceu1s6oflq9op89t8c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRSA2L7Nv0w3sEExiuHRmMw5ANXWhK3jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274056523594-7o8fefc8d4rq3ceu1s6oflq9op89t8c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

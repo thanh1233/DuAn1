@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ApVeXe</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="link_RealTime_Database">https://apvexe-6847e-default-rtdb.asia-southeast1.firebasedatabase.app/</string>
+    <string name="link_Storage">gs://apvexe-6847e.appspot.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

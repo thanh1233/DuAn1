@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Capnhatthongtin">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        >
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:paddingRight="36dp"
+                android:paddingLeft="36dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:paddingBottom="5dp"
+                        android:text="THÊM XE"
+                        android:textColor="#3E4467"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="0dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardCornerRadius="19dp">
+                        <ImageView
+                            android:id="@+id/imgavatar"
+                            android:layout_width="270dp"
+                            android:background="@drawable/images"
+                            android:layout_marginStart="-35dp"
+                            android:layout_marginTop="-35dp"
+                            android:layout_height="270dp"/>
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/hvt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Tên nhà xe:" />
+
+                <EditText
+                    android:id="@+id/til_hoTen_capNhatActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edttextdox"
+                    android:drawableTint="#ABD2D8"
+                    android:inputType="text"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Tuyến chạy:" />
+
+                <EditText
+                    android:id="@+id/til_mail_capNhatActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_edttextdox"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Điểm đến:" />
+
+                <EditText
+                    android:id="@+id/til_mail2_capNhatActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_edttextdox"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Giá vé:" />
+
+                <EditText
+                    android:id="@+id/gia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_edttextdox"
+                    android:paddingLeft="10dp"
+                    android:inputType="number"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Số lượng vé:" />
+
+                <EditText
+                    android:id="@+id/soluong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_edttextdox"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:inputType="number"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/ns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Ngày khởi hành:" />
+
+                <TextView
+                    android:id="@+id/til_birtday_capNhatActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edttextdox"
+                    android:drawableTint="#ABD2D8"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/n"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Giờ khởi hành:" />
+
+                <TextView
+                    android:id="@+id/gio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_edttextdox"
+                    android:drawableTint="#ABD2D8"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/sodt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Số điện thoại:" />
+
+                <EditText
+                    android:id="@+id/til_phone_capNhatActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/background_edttextdox"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:enabled="false"
+                    android:hint="0xxxxxxxxx"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="17dp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="49dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_height="60dp">
+
+                    <Button
+                        android:id="@+id/btn_ok_capNhatActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/button_bg"
+                        android:text="ĐĂNG BÀI"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
