@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apvexe.model.PaymentInfo;
+import com.example.apvexe.service.PaymentService;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +37,11 @@ import java.util.Date;
 import java.util.Locale;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Xemthongtin extends AppCompatActivity {
     private TextView tent, gia, thoigian, chuyen, thanhtoan, lienhe, datcoc, sdt, tento;
@@ -256,6 +263,30 @@ public class Xemthongtin extends AppCompatActivity {
                 thanhtoan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Retrofit retrofit = new Retrofit.Builder()
+                                .baseUrl("https://api.stripe.com/v1/")
+                                .addConverterFactory(GsonConverterFactory.create())
+                                .build();
+
+                        PaymentService service = retrofit.create(PaymentService.class);
+                        Call<PaymentInfo> paymentCall = service.CreatePayment(500000, "vnd", "card");
+                        paymentCall.enqueue(new Callback<PaymentInfo>() {
+                            @Override
+                            public void onResponse(Call<PaymentInfo> call, Response<PaymentInfo> response) {
+                                PaymentInfo paymentInfo = response.body();
+                            }
+
+                            @Override
+                            public void onFailure(Call<PaymentInfo> call, Throwable t) {
+                                t.toString();
+                            }
+                        });
+
+
+
+
+
+
                         if (Integer.parseInt(tongso.getText().toString().trim()) == 0) {
                             tongtien.setText("Hết vé!");
                             Toast.makeText(getApplicationContext(), "Vé đã hết không thể thanh toán", Toast.LENGTH_SHORT).show();
