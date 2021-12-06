@@ -25,6 +25,7 @@ import android.os.Handler;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,6 +33,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -87,11 +89,18 @@ public class Capnhatthongtin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capnhatthongtin);
         mappingView();
+        tieptuc.setVisibility(View.GONE);
+
+        imgImageView.setEnabled(false);
+                tilPhone.setEnabled(false);
+        tilMail.setEnabled(false);
+                tilHoTen.setEnabled(false);
 
         linkdatabase = getResources().getString(R.string.link_RealTime_Database);
 
         mappingView();
         tilBirthday = (TextView) findViewById(R.id.til_birtday_capNhatActivity);
+        tilBirthday.setEnabled(false);
         tilBirthday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,6 +121,33 @@ public class Capnhatthongtin extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 startActivityForResult(intent, REQUEST_IMAGE_OPEN);
+            }
+        });
+
+        findViewById(R.id.thoat).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        ToggleButton toggle = (ToggleButton) findViewById(R.id.update);
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tieptuc.setVisibility(View.VISIBLE);
+                    tilBirthday.setEnabled(true);
+                    imgImageView.setEnabled(true);
+                    tilPhone.setEnabled(true);
+                    tilMail.setEnabled(true);
+                    tilHoTen.setEnabled(true);
+                } else {
+                    tieptuc.setVisibility(View.GONE);
+                    imgImageView.setEnabled(false);
+                    tilPhone.setEnabled(false);
+                    tilMail.setEnabled(false);
+                    tilHoTen.setEnabled(false);
+                    tilBirthday.setEnabled(false);
+                }
             }
         });
 

@@ -41,6 +41,24 @@
         <entry key="..\:/DuanThanh/app/src/main/res/menu/bottom_navigation.xml" value="0.12864583333333332" />
         <entry key="..\:/DuanThanh/app/src/main/res/menu/drawer_menu.xml" value="0.24615384615384617" />
         <entry key="..\:/DuanThanh/app/src/main/res/menu/menu_navicaysan.xml" value="0.24444444444444444" />
+        <entry key="..\:/New folder/app/src/main/res/drawable/backgroud_tron.xml" value="0.26666666666666666" />
+        <entry key="..\:/New folder/app/src/main/res/drawable/backgroud_tronc.xml" value="0.26666666666666666" />
+        <entry key="..\:/New folder/app/src/main/res/drawable/bg_uiv.xml" value="0.26666666666666666" />
+        <entry key="..\:/New folder/app/src/main/res/drawable/bg_uxiv.xml" value="0.26666666666666666" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_capnhatthongtin.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_chuyencuatoi1.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_hoadonadmin.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_hoadoncuatoi.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_otp.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_sig_up.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_sua_nha_xe.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_them_xe.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/activity_trang_chu.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/fag_home.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/layout/layout_header_nav.xml" value="0.25052083333333336" />
+        <entry key="..\:/New folder/app/src/main/res/menu/drawer_menu.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>

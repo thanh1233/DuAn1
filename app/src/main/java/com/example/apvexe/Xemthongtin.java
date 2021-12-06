@@ -1,12 +1,17 @@
 package com.example.apvexe;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -27,6 +32,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.normal.TedPermission;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
@@ -34,6 +41,7 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -57,6 +65,7 @@ public class Xemthongtin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xemthongtin);
         getSupportActionBar().setTitle("Thông tin chuyến");
+        clickrequest();
         tent = findViewById(R.id.tennhaxe);
         gia = findViewById(R.id.giatien);
         thoigian = findViewById(R.id.ngaygio);
@@ -74,6 +83,47 @@ public class Xemthongtin extends AppCompatActivity {
         if (user == null) {
             return;
         }
+
+        lienhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance(linkdatabase).getReference("Danhsachxe").child(value1);
+                reference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String sdta = dataSnapshot.child("sdt").getValue(String.class);
+
+                        AlertDialog.Builder aBuilder = new AlertDialog.Builder(v.getContext());
+                        aBuilder.setMessage("Sẽ gọi điện đến "+ sdta);
+                        aBuilder.setPositiveButton("Gọi", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String number = sdta;
+                                if (number.trim().length() > 0) {
+                                    String dial = "tel:" + number;
+                                    v.getContext().startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+
+                                } else {
+                                    Toast.makeText(Xemthongtin.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+                        aBuilder.setNegativeButton("Hủy bỏ", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                        aBuilder.show();
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
         reference = FirebaseDatabase.getInstance(linkdatabase).getReference("Danhsachxe").child(value1);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -350,6 +400,27 @@ public class Xemthongtin extends AppCompatActivity {
         });
 
 
+    }
+    private void clickrequest() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M){
+            return;
+        }
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+
+            }
+
+            @Override
+            public void onPermissionDenied(List<String> deniedPermissions) {
+
+            }
+        };
+        TedPermission.create()
+                .setPermissionListener(permissionListener)
+                .setDeniedMessage("Nếu bạn không cho phép chức năng gọi điện không thể sử dụng được!\n \nNếu bạn muốn bật lại nó thì hãy vào phần [Setting] > [Quyền truy cập] > [Bật các quyền truy cập]")
+                .setPermissions(Manifest.permission.CALL_PHONE)
+                .check();
     }
 }
 

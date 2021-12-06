@@ -2,6 +2,8 @@ package com.example.apvexe.fragmant;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +38,7 @@ public class homefragmant extends Fragment {
     View view;
     private RecyclerView rcv;
     private String linkdatabase;
-    private TextView themxe, thanhtoancuatoi;
+    private TextView themxe, thanhtoancuatoi, timkiem;
     private DatabaseReference reference;
     private ArrayList<Xe> xeArrayList = new ArrayList<>();
     private NhaXeAdapter nhaXeAdapter;
@@ -52,7 +54,11 @@ public class homefragmant extends Fragment {
         });
         linkdatabase = getResources().getString(R.string.link_RealTime_Database);
         rcv = view.findViewById(R.id.rcv_NhaTro);
+        timkiem = view.findViewById(R.id.timkiem);
         themxe = view.findViewById(R.id.themxe);
+
+
+
         thanhtoancuatoi = view.findViewById(R.id.thanhtoancuatoi);
         thanhtoancuatoi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +94,29 @@ public class homefragmant extends Fragment {
         xeArrayList = new ArrayList<>();
         nhaXeAdapter.setData(xeArrayList);
         rcv.setAdapter(nhaXeAdapter);
+
+        timkiem.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString() != null) {
+                    xeArrayList.clear();
+                    getLisviewDatabasefirebase(s.toString());
+                } else {
+                    xeArrayList.clear();
+                    getLisviewDatabasefirebase("");
+                }
+            }
+        });
         return view;
     }
 
@@ -102,7 +131,9 @@ public class homefragmant extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                Xe xe = snapshot.getValue(Xe.class);
                 if (xe != null) {
-                    xeArrayList.add(xe);
+                    if (xe.getTuyenchay().contains(key) || xe.getDiemden().contains(key)) {
+                        xeArrayList.add(xe);
+                    }
                     nhaXeAdapter.notifyDataSetChanged();
                 }
 

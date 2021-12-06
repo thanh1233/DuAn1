@@ -9,14 +9,42 @@
             />
 
         <item
+            android:visible="false"
             android:id="@+id/nhanTin"
             android:title="Nhắn Tin"
             android:icon="@drawable/ic_baseline_message_24"
             />
         <item
+            android:visible="false"
             android:id="@+id/caiDat"
             android:title="Cài Đặt"
             android:icon="@drawable/ic_baseline_settings_24"
+            />
+        <item
+            android:id="@+id/capnhat"
+            android:icon="@drawable/ic_avata_account_circle_24"
+            android:title="Thông tin người dùng"
+
+            />
+
+        <item
+            android:id="@+id/doimatkhau"
+            android:visible="false"
+            android:title="Đặt lại mật khẩu"
+
+            />
+        <item
+            android:visible="false"
+            android:id="@+id/intro"
+            android:title="Giới thiệu phần mềm"
+
+            />
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_baseline_logout_24"
+            android:title="Đăng xuất tài khoản"
+
             />
 
         />
@@ -24,40 +52,22 @@
     </group>
 
     <item android:title="Các tiện ích"
+        android:visible="false"
         >
 
         <menu>
-            <item
-                android:id="@+id/capnhat"
-                android:title="Thông tin người dùng"
 
-                />
-
-            <item
-                android:id="@+id/doimatkhau"
-                android:title="Đặt lại mật khẩu"
-
-                />
-            <item
-                android:id="@+id/intro"
-                android:title="Giới thiệu phần mềm"
-
-                />
-
-            <item
-                android:id="@+id/logout"
-                android:title="Đăng xuất tài khoản"
-
-                />
         </menu>
 
     </item>
 
     <item android:title="Hỗ trợ"
+        android:visible="false"
         >
 
         <menu>
             <item
+                android:visible="false"
                 android:id="@+id/donggopykien"
                 android:title="Phản hồi người dùng"
 

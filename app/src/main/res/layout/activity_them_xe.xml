@@ -46,19 +46,33 @@
 
                     <androidx.cardview.widget.CardView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="300dp"
+                        android:layout_height="250dp"
                         android:layout_marginTop="0dp"
+
                         android:paddingBottom="5dp"
                         android:layout_marginBottom="5dp"
                         app:cardCornerRadius="19dp">
+
+                        <ImageView
+                            android:layout_marginTop="50dp"
+                            android:layout_marginLeft="65dp"
+                            android:layout_width="170dp"
+                            android:background="@drawable/images"
+                            android:layout_height="130dp"/>
+                        <TextView
+                            android:layout_marginTop="170dp"
+                            android:layout_marginLeft="75dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thêm hình ảnh của bạn!"/>
+
                         <ImageView
                             android:id="@+id/imgavatar"
-                            android:layout_width="270dp"
-                            android:background="@drawable/images"
+                            android:layout_width="370dp"
                             android:layout_marginStart="-35dp"
                             android:layout_marginTop="-35dp"
-                            android:layout_height="270dp"/>
+                            android:layout_height="330dp"/>
                     </androidx.cardview.widget.CardView>
 
 

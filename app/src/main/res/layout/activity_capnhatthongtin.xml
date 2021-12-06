@@ -8,24 +8,24 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp"
+        android:paddingTop="0dp"
         >
 
 
         <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <LinearLayout
-                android:paddingRight="36dp"
-                android:paddingLeft="36dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingLeft="36dp"
+                android:paddingRight="36dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                         android:layout_height="200dp"
                         android:layout_marginTop="0dp"
                         android:src="@drawable/default_user"
-                        app:civ_border_color="#3E4467"
+                        app:civ_border_color="#FFFFFF"
                         app:civ_border_width="2dp" />
 
                     <TextView
@@ -133,51 +133,52 @@
                     android:layout_marginBottom="5dp"
                     android:text="Số điện thoại:" />
 
-                    <EditText
-                        android:id="@+id/til_phone_capNhatActivity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
-                        android:background="@drawable/background_edttextdox"
-                        android:paddingLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:hint="0xxxxxxxxx"
-                        android:paddingRight="10dp"
-                        android:paddingBottom="10dp"
-                        android:textSize="17dp" />
-
+                <EditText
+                    android:id="@+id/til_phone_capNhatActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/background_edttextdox"
+                    android:hint="0xxxxxxxxx"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="17dp" />
 
 
                 <LinearLayout
                     android:id="@+id/linersendotp"
-                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
                     android:layout_marginTop="18dp"
                     android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:visibility="gone">
+
                     <EditText
                         android:id="@+id/nhapotp"
                         android:layout_width="250dp"
                         android:layout_height="47dp"
                         android:background="@drawable/background_edttextdox"
+                        android:hint="Nhập mã OTP..."
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
                         android:paddingRight="10dp"
-                        android:hint="Nhập mã OTP..."
                         android:paddingBottom="10dp"
                         android:textSize="17dp" />
+
                     <Button
                         android:id="@+id/guilai"
-                        android:layout_marginLeft="10dp"
                         android:layout_width="match_parent"
-                        android:text=""
-                        android:textColorHint="#FFFFFF"
-                        android:enabled="false"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="-2dp"
                         android:layout_marginRight="1dp"
-                        android:textColor="#FFFFFF"
                         android:background="@drawable/backgroundcsc"
-                        android:layout_height="45dp"/>
+                        android:enabled="false"
+                        android:text=""
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </LinearLayout>
 
                 <TextView
@@ -191,13 +192,14 @@
                     android:layout_marginBottom="-26dp"
                     android:text="Xóa tài khoản"
                     android:textColor="#E40505" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+                    android:layout_height="60dp"
                     android:layout_marginStart="36dp"
                     android:layout_marginTop="49dp"
                     android:layout_marginEnd="36dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_height="60dp">
+                    android:layout_marginBottom="16dp">
 
                     <Button
                         android:id="@+id/btn_ok_capNhatActivity"
@@ -234,7 +236,37 @@
 
         </ScrollView>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
 
+            <TextView
+                android:id="@+id/thoat"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="?attr/homeAsUpIndicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ToggleButton
+                android:id="@+id/update"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:hint=" "
+                android:textOff=" "
+                android:textOn=" "
+                android:background="@drawable/ic_baseline_settings_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
