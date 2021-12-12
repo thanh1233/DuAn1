@@ -33,8 +33,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class TrangChu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -90,10 +93,29 @@ public class TrangChu extends AppCompatActivity implements NavigationView.OnNavi
 
         setBottomNavigationView();
 
-        replaceFragnent(new homefragmant());
-        navigationView.setCheckedItem(R.id.btnthongke);
-        setTitle("CHỌN XE");
-        bottomNavigationView.getMenu().findItem(R.id.btnthongke).setChecked(true);
+        reference = FirebaseDatabase.getInstance(linkRealTime).getReference("users").child(user.getUid()).child("User");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String ktadmin = dataSnapshot.child("0").getValue(String.class);
+                if (ktadmin.equals("Admin")) {
+                    replaceFragnent(new nhantin());
+                    navigationView.setCheckedItem(R.id.btnthongke);
+                    setTitle("Chuyến xe của bạn");
+                    bottomNavigationView.getMenu().findItem(R.id.btnthongke).setChecked(true);
+                } else {
+                    replaceFragnent(new homefragmant());
+                    navigationView.setCheckedItem(R.id.btnthongke);
+                    setTitle("CHỌN XE");
+                    bottomNavigationView.getMenu().findItem(R.id.btnthongke).setChecked(true);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     public void setBottomNavigationView() {

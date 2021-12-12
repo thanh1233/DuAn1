@@ -18,31 +18,31 @@
         <EditText
             android:id="@+id/timkiem"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingRight="10dp"
-            android:drawableRight="@drawable/ic_baseline_search_24"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:paddingStart="10dp"
-            android:textSize="16dp"
-            android:hint="Tìm tuyến ..."
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="4dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="2dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginRight="5dp"
-            android:background="@drawable/button_bgv" />
+            android:background="@drawable/button_bgv"
+            android:drawableRight="@drawable/ic_baseline_search_24"
+            android:hint="Tìm tuyến ..."
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:textSize="15dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_NhaTro"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="55dp"
             android:paddingTop="0dp" />
 
     </RelativeLayout>
     <TextView
-        android:visibility="gone"
+
         android:id="@+id/thanhtoancuatoi"
         android:layout_width="172dp"
         android:layout_height="36dp"
@@ -57,19 +57,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <TextView
-        android:id="@+id/themxe"
-        android:layout_width="172dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/backgroundcsc"
-        android:gravity="center"
-        android:text="Chuyến của tôi"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

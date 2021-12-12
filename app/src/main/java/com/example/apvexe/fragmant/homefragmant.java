@@ -38,7 +38,7 @@ public class homefragmant extends Fragment {
     View view;
     private RecyclerView rcv;
     private String linkdatabase;
-    private TextView themxe, thanhtoancuatoi, timkiem;
+    private TextView  thanhtoancuatoi, timkiem;
     private DatabaseReference reference;
     private ArrayList<Xe> xeArrayList = new ArrayList<>();
     private NhaXeAdapter nhaXeAdapter;
@@ -46,16 +46,10 @@ public class homefragmant extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fag_home,container,false);
-        view.findViewById(R.id.themxe).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), chuyencuatoi1.class));
-            }
-        });
         linkdatabase = getResources().getString(R.string.link_RealTime_Database);
         rcv = view.findViewById(R.id.rcv_NhaTro);
         timkiem = view.findViewById(R.id.timkiem);
-        themxe = view.findViewById(R.id.themxe);
+
 
 
 
@@ -67,24 +61,6 @@ public class homefragmant extends Fragment {
             }
         });
         getLisviewDatabasefirebase("");
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        reference = FirebaseDatabase.getInstance(linkdatabase).getReference("users").child(user.getUid()).child("User");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String ktadmin = dataSnapshot.child("0").getValue(String.class);
-                if (ktadmin.equals("")) {
-                    themxe.setVisibility(View.GONE);
-                    thanhtoancuatoi.setVisibility(View.VISIBLE);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
 
         nhaXeAdapter = new NhaXeAdapter();
